@@ -1,0 +1,34 @@
+const express = require('express');
+
+const app = express();
+
+/*
+  *Rota / recursos
+*/
+
+/*
+  * Métodos HTTP:
+  * GET: Buscar/Listar uma informação do back-end
+  * POST: Criar uma no informação back-end
+  * PUT: Alterar uma no informação back-end
+  * DELETE: Deletar uma informção no back-end
+  */
+
+/* 
+  * Tipos de Parâmetros:
+   * Query Params: Parâmetro nomeados enviados na rota após "?" (Filtros, paginação)
+   * Route Params: Parâmetros utilizados para identificar recursos
+*/
+
+// quando é só uma '/' barra é a rota raiz
+app.get('/users',(request, response) => { //Essa função sempre recebe dois paramentros Request = requisição e response = resposta
+  const params = request.query;
+  console.log(params);
+  
+  return response.json({
+    evento: 'Semana OmniStack 11.0',
+    aluno:  'Wiuver Afonso Ribeiro'
+  });
+}); 
+
+app.listen(3333); //Cannot GET =  significa quando não existe

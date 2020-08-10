@@ -1,5 +1,5 @@
 # Be The Hero :purple_heart:
-## Application developed during the week omstack 11, taught by Diego Fernandes CTO of Rocketseat. The purpose of which is the registration of ONGs and cases.
+## Application developed during the Omstack Week 11, taught by Diego Fernandes CTO of Rocketseat. The purpose of which is the registration of ONGs and cases.
 ### Aplicação desenvolvida utilizando as tecnologias React, React Native e Node com Express.
 ## Application in React Native
 ## Home Screen

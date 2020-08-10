@@ -14,7 +14,7 @@ Como requisito para rodar o projeto, você precisará de ter o [NodeJs](https://
  Após ter realizado o Download e a instalação,  entre no Prompt de comando, e digite ' node -v ' para verificar se o Node está instalado corretamente.
   Em seguida realize o clone deste repositório para sua maquina:
   ```git
-  $ git clone https://github.com/Wiuver-Ribeiro/Clone-PicPay--React-Native.git
+  $ git clone https://github.com/Wiuver-Ribeiro/Be-The-Hero.git
   ```
   Após ter feito o clone do repositório: Entre na pasta do projeto e digite o comando:
   

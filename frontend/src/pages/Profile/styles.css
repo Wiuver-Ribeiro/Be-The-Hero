@@ -13,6 +13,11 @@
 .profile-container header span {
   font-size: 20px;
   margin-left: 24px;
+  color: #ddd;
+}
+
+.profile-container h1 {
+  color: #ddd;
 }
 
 .profile-container header img {
@@ -70,6 +75,14 @@
   opacity: 0.8;
 }
 
+.profile-container ul li #donate {
+  position: relative;
+  background-color: #E02141;
+  width: 80%;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+}
 .profile-container ul li strong {
   display: block;
   margin-bottom: 16px;

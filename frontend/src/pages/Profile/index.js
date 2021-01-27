@@ -48,7 +48,7 @@ export default function Profile() {
     <div className="profile-container">
       <header>
         <img src={LogoImg} alt="Be The Hero" />
-        <span>Bem Vinda, {ongName}</span>
+        <span>Bem Vindo(a), {ongName}</span>
 
         <Link className="button" to="/incidents/new"> Cadastrar novo caso</Link>
         <button onClick={handleLogout}>
@@ -73,6 +73,12 @@ export default function Profile() {
             <button onClick={() => handleDeleteIncident(incident.id)} type="button">
               <FiTrash2 size={20} color="#a8a8b3" />
             </button>
+          
+          <li>
+          <button id="donate" onClick={()=>{alert('Olá, mundo')}} type="button">
+              Doar
+            </button>
+          </li>
           </li>
         ))}
       </ul>

@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useHistory, useParams } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FiHeart, FiPower, FiTrash2 } from 'react-icons/fi';
 
 import api from '../../services/api';
 
-import './styles.css';
+import '../Profile/styles.css';
+import './style.css';
 
 import LogoImg from '../../assets/logo.svg';
 
-export default function Profile() {
+export default function Donate() {
   const [incidents, setIncidents] = useState([]);
   const ongId = localStorage.getItem('ongId');
   const ongName = localStorage.getItem('ongName');
-  const history = useHistory();
+  const [donate, setDonate] = useState('');
 
+
+  const history = useHistory();
 
   useEffect(() => {
     api.get('profile', {
@@ -38,24 +41,15 @@ export default function Profile() {
     }
   }
 
-  async function handleShowIncident(id) {
-    try {
-      await api.get(`incidents/${id}`, {
-        headers: {
-          Authorization: ongId,
-        }
-      });
-      history.push('/donate')
-      setIncidents(incidents.filter(incident => incident.id !== id));
-    } catch (err) {
-      alert('Erro ao mostrar caso, tente novamente!');
-    }
-  }
-
   function handleLogout() {
     localStorage.clear();
-    alert('Logout suceeded!');
+
     history.push('/')
+  }
+
+  function valueDonated(value) {
+    alert(`O valor de R$ ${value} foi doado!`);
+    history.push('/profile');
   }
 
   return (
@@ -70,7 +64,7 @@ export default function Profile() {
         </button>
       </header>
 
-      <h1>Casos Cadastrados</h1>
+      <h1>Doar para caso</h1>
 
       <ul>
         {incidents.map(incident => (
@@ -82,17 +76,25 @@ export default function Profile() {
             <p>{incident.description}</p>
 
             <strong>VALOR:</strong>
-            <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(incident.value)}</p>
+            <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(incident.value - donate)}</p>
 
             <button onClick={() => handleDeleteIncident(incident.id)} type="button">
               <FiTrash2 size={20} color="#a8a8b3" />
             </button>
 
             <li>
-              <Link id="donate" to="/incidents/donate" onClick={() => handleShowIncident(incident.id)} >
-                Doar
-              <FiHeart size={25} color="#fff" />
-              </Link>
+              <div className="content-donate">
+                <input
+                  className="donate-input"
+                  type="number"
+                  placeholder="Doe quanto quiser..."
+                  value={donate}
+                  onChange={e => setDonate(e.target.value)}
+                />
+                <Link className="donate" onClick={()=> valueDonated(donate)}>
+                <FiHeart size={25} color="#f00" />
+                </Link>
+              </div>
             </li>
           </li>
         ))}

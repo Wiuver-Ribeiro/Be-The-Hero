@@ -1,0 +1,17 @@
+.donate-input {
+  padding: 5px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.content-donate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.donate {
+  background-color: #ddd;
+  padding: 10px;
+  border-radius: 5px;
+}

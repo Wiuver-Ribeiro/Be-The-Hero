@@ -1,6 +1,6 @@
 # Be The Hero :purple_heart:
-## Application developed  The purpose of which is the registration of ONGs and cases.
-### Aplicação desenvolvida utilizando as tecnologias React e Node com Express.
+
+## Aplicação desenvolvida utilizando as tecnologias React e Node com Express.
 
 # Be The Hero | React | Node
  Este código demonstra  uma aplicação chamada 'Be The Hero', feita React e Node.
